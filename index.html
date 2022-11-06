@@ -9,7 +9,7 @@
 	<title>Sam. - Personal Portfolio</title>
 
 	<!-- tab img -->
-	<link rel="icon" href="assets/img/me.jpg" type="image/x-icon">
+	<link rel="icon" href="imgg/me.jpg" type="image/x-icon">
 
 	<!-- css plugin -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -44,6 +44,8 @@
 	<!-- // PRELOADER END -->
 
 	<!-- // NAVIGATION BEGIN -->
+	<section id="testimonial" class="testimonial-slider text-center" style="background-image: url('bg2.jpg');">
+
 	<div id="navigation">
 		<div class="container">
 			<div class="row">
@@ -69,6 +71,7 @@
 								<ul class="nav navbar-nav navbar-right">
 									<li><a class="active smoth-scroll" href="#home">Home</a></li>
 									<li><a class="smoth-scroll" href="#about">About</a></li>
+									<li><a class="smoth-scroll" href="ai world.html">AI world</a></li>
 									<li><a class="smoth-scroll" href="#portfolio">Portfolio</a></li>
 									<li><a class="smoth-scroll" href="#experience">Experiences</a></li>
 									<li><a class="smoth-scroll" href="#testimonial">Testimonial</a></li>
@@ -90,8 +93,13 @@
 			<div class="display-table-cell">
 				<div class="overlay">
 
-					<div img src="imgg/bg2.jpg" alt="Background image"
-                        containment:'#home', 
+				
+
+
+					
+
+					<div img src="bg2.jpg" alt="Background image"
+                        containment:home, 
                         showControls:false, 
                         autoPlay:true, 
                         loop:true, 
@@ -99,7 +107,7 @@
                         startAt:0, 
                         opacity:50, 
                         addRaster:true, 
-                        quality:'default'}">
+                        quality:default>
 					</div>
 
 					<div class="container">
@@ -134,19 +142,28 @@
 				<div class="description col-md-6 col-sm-4 col-xs-12">
 					<h2>Hello, I am Sambridhi</h2>
 					<h4>Tech Enthusiast from Nepal</h4>
-					<p>I am Sambridhi Deo interested in AI and other computer technologies.I want to connect Computer science with Mathematics to benefit the medical world. I am currently doing my undergraduate in Computer science and Mathematics. Apart from these, I love drawing and Public speaking. I have represented my country in international Public speaking contest. I love Nepali and English Literature. I have published a book in my own native language. I publish my articles and works here in my website timely so Join my newsletter to hear my updates.To know more about me, Download my resume 
-					</p>
+					
+						<p>
+							
+								I am Sambridhi Deo. Last night, I had a nightmare of humanoid robots ruling over the world.Well, This isn't only my nightmare, but I supose yours too. I love colors: wheather it's colors of my art in the paper or colors of my code in VScode. Those colors take me to the different world. I am majoring in Computer Science and Mathematics, but believe me, I am not that one kid in the class who asks for extra assignments.
+						
+								Artificial intelligence is something I am really interested on.	My mission is to connect AI to benefit the healthcare industry. If you want to know the real me, let's meet by the waterfall, amidst the showers of red leaves, by the sunset where the evening would still feel young. 
+
+								Here's my Resume if you are looking for profesional backgroud-which I am still building and will be building throughout the life.
+							
+						</p>
+					
 
 					<ul class="social-icons">
 						<li><a href="https://www.facebook.com/flourishing.sambridhi/"><i class="fa fa-facebook"></i></a></li>
 						<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
 						<li><a href="https://www.instagram.com/flourishing_sambridhi/"><i class="fa fa-instagram"></i></a></li>
-						<!-- <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
-						<!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+						<li><a href="https://github.com/Samcoodess"><i class="fa fa-github"></i></a></li>
+						<!-- <li><a href="mailto:sambridhidev63@gmail.com"><i class="fa fa-mail"></i></a></li> -->
 					</ul>
 
 					<p>
-						<a href="/final resume (2).pdf" class="btn btn-dark with-arrow smoth-scroll">My Resume <i class="fa fa-download"></i></a>
+						<a href="/resume 4.0.pdf" class="btn btn-dark with-arrow smoth-scroll">My Resume <i class="fa fa-download"></i></a>
 					</p>
 				</div>
 
@@ -244,6 +261,35 @@
 		</div>
 	</section>
 	<!-- // SKILLS END -->
+
+<!-- AI Zone Begin-->
+	<section id="AI world">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2>Ai Zone</h2>
+				</div>
+					
+
+					<div class="col-md-4 col-sm-6">
+					<div class="Ai zone-item">
+						
+						<a href="ai_world.html" class="Ai zone-img">
+							<img src="/imgg/AI.jpg" height="300" width="250">
+						</a>
+						<div class="Ai zone-desc">
+							<h4>
+								<a href="ai_world.html">History of AI</a>
+							</h4>
+							<p>Do you question how Facebook suggests tagging a person by just recognizing the face in the image?... Crazy, right? Well, technology has been getting crazier day by day, and just when we thought we reached the limit, there was the birth of AI. Let’s look back to the history of AI. In 1950, the Turing test, originally called an imitation game, ...</p>
+							<a href="ai_world.html" class="btn btn-dark">Read more</a>
+						</div>
+					</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!-- Ai Zone end -->
 
 	<!-- // PORTFOLIO BEGIN -->
 	<section id="portfolio">
@@ -409,6 +455,11 @@
 							</div>
 						</div>
 
+						
+
+
+				
+
 					</div>
 				</div>
 			</div>
@@ -536,6 +587,8 @@
 					</div>
 				</div>
 
+				
+
 			</div>
 		</div>
 	</section>
@@ -601,13 +654,18 @@
 	</section>
 	<!-- // CONTACT END -->
 
+	<!-- Swiper js
+	<script src=" js/swiper-bundle.min.js"></script> -->
+
+	<!-- Js -->
+	<!-- <script src></script> -->
 	<!-- // FOOTER BEGIN -->
 	<footer id="footer">
 		<div class="container">
 			<div class="col-md-12 text-center">
 				<ul class="social-icons-footer">
 					<li><a href="https://www.facebook.com/flourishing.sambridhi/"><i class="fa fa-facebook"></i></a></li>
-					<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+					<li><a href="https://github.com/Samcoodess"><i class="fa fa-github"></i></a></li>
 					<li><a href="https://www.instagram.com/flourishing_sambridhi/"><i class="fa fa-instagram"></i></a></li>
 					<li><a href="https://www.linkedin.com/in/sambridhi-deo-3002b0206/"><img src="/imgg/linke.png " height="20"></a></li>
 					<li><a href="https://www.youtube.com/channel/UC5m6Jeo7SS_b71ZBcne3TNw"><img src="/imgg/youtube.png" height="24"></a></li>
