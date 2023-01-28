@@ -1,39 +1,19 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+if(isset($_POST['submit'])) {
+    $to = "sambridhidev63@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
 
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-try {
-    //Server settings
-    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = '156.unihost.it';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'deosambridhi@gmail.com';                 // SMTP username
-    $mail->Password = 'MyStrongPassword!';                           // SMTP password
-    $mail->SMTPSecure = 'STARTTLS';                           
-    $mail->Port = 587;                                    // TCP port to connect to
-
-    //Recipients
-    $mail->setFrom('info@example.net');
-    $mail->addAddress($_POST['mail']);     // Add a recipient
-
-
-
-    //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = $_POST['subject'];
-    $mail->Body    = $_POST['text'];
-
-    $mail->send();
-    header('Location: http://www.sambridhideo.com/contact.php');
-    exit();
-} catch (Exception $e) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-}
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
 ?>
