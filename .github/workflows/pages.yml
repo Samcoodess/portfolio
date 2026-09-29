@@ -1,0 +1,47 @@
+name: Deploy Sam Deo portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Stage the public portfolio pages
+        run: |
+          mkdir -p _site/imgg/Art _site/imgg/pics
+          cp index.html archive.html data.html art.html styles-2026.css script-2026.js _site/
+          cp imgg/my.jpg _site/imgg/
+          cp imgg/Art/Cracks.png imgg/Art/Eyes.png imgg/Art/girl.png imgg/Art/incom.png imgg/Art/recent.png imgg/Art/stories.png _site/imgg/Art/
+          cp imgg/pics/harvard.jpg imgg/pics/lisc-award-2025-new.jpg imgg/pics/microsoft-color.jpg imgg/pics/research-poster.jpg imgg/pics/speaking-close.jpg imgg/pics/xtech-award-2024-new.jpg imgg/pics/xtech-award-2024.jpg imgg/pics/xtech-speaking.jpg _site/imgg/pics/
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
