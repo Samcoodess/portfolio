@@ -38,10 +38,10 @@ jobs:
           cp imgg/pics/harvard.jpg imgg/pics/lisc-award-2025-new.jpg imgg/pics/microsoft-color.jpg imgg/pics/research-poster.jpg imgg/pics/speaking-close.jpg imgg/pics/xtech-award-2024-new.jpg imgg/pics/xtech-award-2024.jpg imgg/pics/xtech-speaking.jpg _site/imgg/pics/
 
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
